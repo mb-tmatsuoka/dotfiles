@@ -1,3 +1,15 @@
+set nocompatible
+filetype off
+" Bundles
+set rtp+=~/.vim/vundle.git/
+call vundle#rc()
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/unite.vim'
+Bundle 'thinca/vim-ref'
+Bundle 'thinca/vim-quickrun'
+
+
+
 " ~/.vimrc (configuration file for vim only)
 " skeletons
 function! SKEL_spec()
@@ -39,5 +51,4 @@ filetype indent on
 
 set ts=4 sw=2
 set expandtab
-
 
