@@ -8,7 +8,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
 
-
+set directory=~/.vim/swp
 
 " ~/.vimrc (configuration file for vim only)
 " skeletons
@@ -49,6 +49,15 @@ filetype plugin on
 filetype indent on
 " ~/.vimrc ends here
 
-set ts=4 sw=2
+set ts=2 sw=2
 set expandtab
+set incsearch
+set hlsearch
+set smarttab
+set title
+set laststatus=2
+set statusline=%t\ %m%r%h%w[%Y][%{&fenc}][%{&ff}]%=%c,%l%11p%%
+
+highlight ZenkakuSpace cterm=reverse ctermfg=lightblue guibg=#666666
+au BufNewFile,BufRead * match ZenkakuSpace /　/
 
