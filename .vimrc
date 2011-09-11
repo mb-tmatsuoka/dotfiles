@@ -49,6 +49,8 @@ filetype plugin on
 filetype indent on
 " ~/.vimrc ends here
 
+syntax on
+
 set ts=2 sw=2
 set expandtab
 set incsearch
