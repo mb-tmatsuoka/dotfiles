@@ -1,0 +1,11 @@
+[user]
+	name = lettas
+	email = lettas0726@gmail.com
+[color]
+	ui = auto
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | [%an] %s%d\" --graph --date=short
