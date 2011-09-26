@@ -51,7 +51,7 @@ filetype indent on
 
 syntax on
 
-set ts=2 sw=2
+set ts=4 sw=4
 set expandtab
 set incsearch
 set hlsearch
