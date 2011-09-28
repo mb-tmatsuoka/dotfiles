@@ -1,3 +1,5 @@
+set nocompatible
+filetype off
 " Bundles
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
@@ -7,9 +9,6 @@ Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
 Bundle 'taglist.vim'
 Bundle 'project.tar.gz'
-
-set nocompatible
-filetype off
 
 set directory=~/.vim/swp
 
