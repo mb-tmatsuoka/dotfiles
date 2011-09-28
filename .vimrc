@@ -7,6 +7,7 @@ Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
 Bundle 'taglist.vim'
 Bundle 'project.tar.gz'
+Bundle 'ZenCoding.vim'
 
 set nocompatible
 filetype off
