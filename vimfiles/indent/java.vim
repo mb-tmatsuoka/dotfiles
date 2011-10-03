@@ -53,6 +53,10 @@ function GetJavaIndent()
   " specific cases.
   let theIndent = cindent(v:lnum)
 
+  if getline(v:lnum - 1) =~ '^\s*@'
+    return indent(v:lnum - 1)
+  endif
+
   " If we're in the middle of a comment then just trust cindent
   if getline(v:lnum) =~ '^\s*\*'
     return theIndent
