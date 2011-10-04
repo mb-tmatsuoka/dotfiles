@@ -1,8 +1,10 @@
 set nocompatible
 filetype off
-" Bundles
+colorscheme desert
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
+
+" Bundles
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
 Bundle 'thinca/vim-ref'
@@ -11,7 +13,27 @@ Bundle 'taglist.vim'
 Bundle 'project.tar.gz'
 Bundle 'ZenCoding.vim'
 
+" filetypes
+filetype plugin on
+filetype indent on
+
+syntax on
+
+set ts=4 sw=4
+set expandtab
+set incsearch
+set hlsearch
+set smarttab
+set title
+set laststatus=2
+set statusline=%t\ %m%r%h%w[%Y][%{&fenc}][%{&ff}]%=%c,%l%11p%%
 set directory=~/.vim/swp
+
+highlight ZenkakuSpace cterm=reverse ctermfg=lightblue guibg=#666666
+au BufNewFile,BufRead * match ZenkakuSpace /　/
+
+vnoremap < <gv
+vnoremap > >gv
 
 """ unite.vim
 " 入力モードで開始する
@@ -31,59 +53,6 @@ nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mr
 
 " Taglist
 nnoremap <silent> ,tl :<C-u>Tlist<CR>
-
-" ~/.vimrc (configuration file for vim only)
-" skeletons
-function! SKEL_spec()
-    0r /usr/share/vim/current/skeletons/skeleton.spec
-    language time en_US
-    if $USER != ''
-        let login = $USER
-    elseif $LOGNAME != ''
-        let login = $LOGNAME
-    else
-        let login = 'unknown'
-    endif
-    let newline = stridx(login, "\n")
-    if newline != -1
-        let login = strpart(login, 0, newline)
-    endif
-    if $HOSTNAME != ''
-        let hostname = $HOSTNAME
-    else
-        let hostname = system('hostname -f')
-        if v:shell_error
-            let hostname = 'localhost'
-        endif
-    endif
-    let newline = stridx(hostname, "\n")
-    if newline != -1
-        let hostname = strpart(hostname, 0, newline)
-    endif
-    exe "%s/specRPM_CREATION_DATE/" . strftime("%a\ %b\ %d\ %Y") . "/ge"
-    exe "%s/specRPM_CREATION_AUTHOR_MAIL/" . login . "@" . hostname . "/ge"
-    exe "%s/specRPM_CREATION_NAME/" . expand("%:t:r") . "/ge"
-    setf spec
-endfunction
-autocmd BufNewFile	*.spec	call SKEL_spec()
-" filetypes
-filetype plugin on
-filetype indent on
-" ~/.vimrc ends here
-
-syntax on
-
-set ts=4 sw=4
-set expandtab
-set incsearch
-set hlsearch
-set smarttab
-set title
-set laststatus=2
-set statusline=%t\ %m%r%h%w[%Y][%{&fenc}][%{&ff}]%=%c,%l%11p%%
-
-highlight ZenkakuSpace cterm=reverse ctermfg=lightblue guibg=#666666
-au BufNewFile,BufRead * match ZenkakuSpace /　/
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -159,4 +128,39 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
-colorscheme desert
+
+" ~/.vimrc (configuration file for vim only)
+" skeletons
+function! SKEL_spec()
+    0r /usr/share/vim/current/skeletons/skeleton.spec
+    language time en_US
+    if $USER != ''
+        let login = $USER
+    elseif $LOGNAME != ''
+        let login = $LOGNAME
+    else
+        let login = 'unknown'
+    endif
+    let newline = stridx(login, "\n")
+    if newline != -1
+        let login = strpart(login, 0, newline)
+    endif
+    if $HOSTNAME != ''
+        let hostname = $HOSTNAME
+    else
+        let hostname = system('hostname -f')
+        if v:shell_error
+            let hostname = 'localhost'
+        endif
+    endif
+    let newline = stridx(hostname, "\n")
+    if newline != -1
+        let hostname = strpart(hostname, 0, newline)
+    endif
+    exe "%s/specRPM_CREATION_DATE/" . strftime("%a\ %b\ %d\ %Y") . "/ge"
+    exe "%s/specRPM_CREATION_AUTHOR_MAIL/" . login . "@" . hostname . "/ge"
+    exe "%s/specRPM_CREATION_NAME/" . expand("%:t:r") . "/ge"
+    setf spec
+endfunction
+autocmd BufNewFile	*.spec	call SKEL_spec()
+
