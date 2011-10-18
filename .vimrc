@@ -13,6 +13,7 @@ Bundle 'taglist.vim'
 Bundle 'project.tar.gz'
 Bundle 'ZenCoding.vim'
 Bundle 'fugitive.vim'
+Bundle 'ack.vim'
 
 " filetypes
 filetype plugin on
