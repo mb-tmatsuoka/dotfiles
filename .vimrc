@@ -164,3 +164,6 @@ function! SKEL_spec()
 endfunction
 autocmd BufNewFile	*.spec	call SKEL_spec()
 
+autocmd BufNewFile *.rb 0r $HOME/.vim/template/ruby.txt
+autocmd BufNewFile *.php 0r $HOME/.vim/template/php.txt
+autocmd BufNewFile *.sh 0r $HOME/.vim/template/shellscript.txt

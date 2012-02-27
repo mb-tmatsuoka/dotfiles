@@ -1,0 +1,18 @@
+#!/bin/bash
+# ======================================
+# Name : 
+#  
+# About : 
+#  
+# Usage : 
+#  
+# ======================================
+BASEDIR=$(cd $(dirname $0)/../; pwd)
+if [ -L $0 ]; then
+  KERNEL=`uname`
+  if [ $KERNEL = "Darwin" ]; then
+    BASEDIR=$(cd $(dirname $(dirname $0)/$(readlink $0))/../; pwd)
+  else
+    BASEDIR=$(cd $(dirname $(readlink -f $0))/../; pwd)
+  fi
+fi
