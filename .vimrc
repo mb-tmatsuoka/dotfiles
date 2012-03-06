@@ -30,6 +30,7 @@ set title
 set laststatus=2
 set statusline=%t\ %m%r%h%w[%Y][%{&fenc}][%{&ff}]%=%c,%l%11p%%
 set directory=~/.vim/swp
+set guioptions-=m
 
 highlight ZenkakuSpace cterm=reverse ctermfg=lightblue guibg=#666666
 au BufNewFile,BufRead * match ZenkakuSpace /　/
@@ -164,6 +165,6 @@ function! SKEL_spec()
 endfunction
 autocmd BufNewFile	*.spec	call SKEL_spec()
 
-autocmd BufNewFile *.rb 0r $HOME/.vim/template/ruby.txt
-autocmd BufNewFile *.php 0r $HOME/.vim/template/php.txt
-autocmd BufNewFile *.sh 0r $HOME/.vim/template/shellscript.txt
+autocmd BufNewFile *.rb 0r $HOME/.vim/templates/ruby.txt
+autocmd BufNewFile *.php 0r $HOME/.vim/templates/php.txt
+autocmd BufNewFile *.sh 0r $HOME/.vim/templates/shellscript.txt
