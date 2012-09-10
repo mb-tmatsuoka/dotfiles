@@ -1,6 +1,6 @@
 [user]
-	name = lettas
-	email = lettas0726@gmail.com
+	name = mb-tmatsuoka
+	email = t.matsuoka@miningbrownie.co.jp
 [color]
 	ui = auto
 [alias]
@@ -8,5 +8,5 @@
 	ci = commit
 	st = status
 	br = branch
-    hist = log --pretty=format:\"%h %ad | [%an] %s%d\" --graph --date=short
-    graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+	hist = log --pretty=format:\"%h %ad | [%an] %s%d\" --graph --date=short
+	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
